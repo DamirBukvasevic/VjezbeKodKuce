@@ -75,3 +75,10 @@ Majica varchar(49) null,
 Novcica decimal(15,8) null,
 Ogrlica int not null
 );
+
+alter table Ostavljena add foreign key (Prijatelj) references Prijatelj(Sifra);
+alter table Prijatelj_Brat add foreign key (Prijatelj) references Prijatelj(Sifra);
+alter table Prijatelj_Brat add foreign key (Brat) references Brat(Sifra);
+alter table Snasa add foreign key (Ostavljena) references Ostavljena(Sifra);
+alter table Punica add foreign key (Snasa) references Snasa(Sifra);
+alter table Svekar add foreign key (Cura) references Cura(Sifra);
